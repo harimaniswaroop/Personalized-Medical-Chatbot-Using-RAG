@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/static/background2.png') no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+        .settings-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 500px;  /* Increased width */
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 1.2rem;
+        }
+        .language-options {
+            margin: 20px 0;
+            text-align: left;
+            column-count: 2;  /* Split into two columns */
+        }
+        .language-options input {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        <form action="{{ url_for('update_language') }}" method="POST">
+            <label>Select your preferred output language:</label>
+            <div class="language-options">
+                <!-- Existing Languages -->
+                <input type="radio" id="english" name="language" value="eng_Latn" required>
+                <label for="english">English</label><br>
+                
+                <!-- Indian Languages -->
+                <input type="radio" id="hindi" name="language" value="hin_Deva">
+                <label for="hindi">Hindi (हिन्दी)</label><br>
+                
+                <input type="radio" id="bengali" name="language" value="ben_Beng">
+                <label for="bengali">Bengali (বাংলা)</label><br>
+                
+                <input type="radio" id="telugu" name="language" value="tel_Telu">
+                <label for="telugu">Telugu (తెలుగు)</label><br>
+                
+                <input type="radio" id="marathi" name="language" value="mar_Deva">
+                <label for="marathi">Marathi (मराठी)</label><br>
+                
+                <input type="radio" id="tamil" name="language" value="tam_Taml">
+                <label for="tamil">Tamil (தமிழ்)</label><br>
+                
+                <input type="radio" id="urdu" name="language" value="urd_Arab">
+                <label for="urdu">Urdu (اردو)</label><br>
+                
+                <input type="radio" id="gujarati" name="language" value="guj_Gujr">
+                <label for="gujarati">Gujarati (ગુજરાતી)</label><br>
+                
+                <input type="radio" id="kannada" name="language" value="kan_Knda">
+                <label for="kannada">Kannada (ಕನ್ನಡ)</label><br>
+                
+                <input type="radio" id="odia" name="language" value="ory_Orya">
+                <label for="odia">Odia (ଓଡ଼ିଆ)</label><br>
+                
+                <input type="radio" id="malayalam" name="language" value="mal_Mlym">
+                <label for="malayalam">Malayalam (മലയാളം)</label><br>
+                
+                <input type="radio" id="punjabi" name="language" value="pan_Guru">
+                <label for="punjabi">Punjabi (ਪੰਜਾਬੀ)</label><br>
+                
+                <input type="radio" id="assamese" name="language" value="asm_Beng">
+                <label for="assamese">Assamese (অসমীয়া)</label><br>
+                
+                <!-- Other International Languages -->
+                <input type="radio" id="spanish" name="language" value="spa_Latn">
+                <label for="spanish">Spanish (Español)</label><br>
+                
+                <input type="radio" id="french" name="language" value="fra_Latn">
+                <label for="french">French (Français)</label><br>
+                
+                <input type="radio" id="german" name="language" value="deu_Latn">
+                <label for="german">German (Deutsch)</label><br>
+                
+                <input type="radio" id="chinese" name="language" value="zho_Hans">
+                <label for="chinese">Chinese (简体中文)</label><br>
+                
+                <input type="radio" id="arabic" name="language" value="ara_Arab">
+                <label for="arabic">Arabic (العربية)</label><br>
+                
+                <input type="radio" id="japanese" name="language" value="jpn_Jpan">
+                <label for="japanese">Japanese (日本語)</label><br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
